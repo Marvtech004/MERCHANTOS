@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+.env
+.env.local
+.DS_Store
+npm-debug.log
+yarn-error.log
+coverage
+**/.DS_Store
+**/thumbs.db
+frontend/node_modules
+backend/node_modules

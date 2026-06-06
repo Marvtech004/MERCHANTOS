@@ -1,0 +1,30 @@
+{
+  "name": "merchantos-backend",
+  "version": "1.0.0",
+  "description": "Merchant OS backend API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "npx eslint . --ext .js",
+    "test": "echo \"No backend tests defined yet\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.29.5",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.1"
+  }
+}

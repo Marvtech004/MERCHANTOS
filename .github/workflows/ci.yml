@@ -1,0 +1,65 @@
+name: Merchant OS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: merchantos
+          POSTGRES_PASSWORD: merchantos123
+          POSTGRES_DB: merchantos
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U merchantos"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Run backend lint
+        run: |
+          cd backend
+          npm run lint
+
+      - name: Run frontend lint
+        run: |
+          cd frontend
+          npm run lint
+
+      - name: Run backend tests
+        run: |
+          cd backend
+          npm test
+
+      - name: Run frontend tests
+        run: |
+          cd frontend
+          npm test

@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+button,
+input,
+textarea,
+select {
+  @apply rounded-lg border border-slate-200 bg-white px-4 py-2 text-slate-900 shadow-sm;
+}
+
+.dark button,
+.dark input,
+.dark textarea,
+.dark select {
+  @apply border-slate-700 bg-slate-900 text-slate-100;
+}
