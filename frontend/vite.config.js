@@ -7,6 +7,9 @@ export default defineConfig({
     port: 4173,
     proxy: {
       '/api': 'http://localhost:4000'
+    },
+    watch: {
+      ignored: ['**/android/**', '**/ios/**', '**/node_modules/**']
     }
   }
 });
