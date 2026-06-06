@@ -1,0 +1,6 @@
+{
+  "appId": "com.marvtech.merchantos",
+  "appName": "MerchantOS",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
